@@ -75,7 +75,7 @@ app.get('/movies/details/:id', async (req, res) => {
   try {
     const result = await fetchMovieById(id);
     console.log('result', result);
-    if (result == null) {
+    if (result == undefined) {
       res.status(404).json({ error: 'Movie not found' });
     } else {
       res.status(200).json({ movie: result });
